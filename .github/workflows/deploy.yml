@@ -1,0 +1,41 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [ "main" ]  # or "master", or any branch you want to trigger deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Check out your repository code
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      # 2) Configure AWS credentials (from your GitHub secrets)
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      # 3) (Optional) Build step if you need to compile Tailwind or other assets
+      #    For example:
+      # - name: Install Node
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16
+      #
+      # - name: Install dependencies
+      #   run: npm install
+      #
+      # - name: Build Tailwind
+      #   run: npx tailwindcss -i ./src/input.css -o ./output.css
+
+      # 4) Sync repo files to your S3 bucket
+      - name: Deploy to S3
+        run: aws s3 sync . s3://itzwiz.com --delete
+        # Replace YOUR-BUCKET-NAME with the actual bucket
+        # --delete removes files from S3 that are no longer in your repo
