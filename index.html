@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Itz Wiz</title>
+  <!-- Link to your locally compiled Tailwind CSS -->
+  <link href="./output.css" rel="stylesheet" />
+
+  <style>
+    /* Optional: Smooth transitions for background & text color changes */
+    * {
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-gray-800 backdrop-blur-sm">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold text-purple-400">
+        Itz Wiz
+      </a>
+      <div class="space-x-4">
+        <a href="#about" class="hover:text-purple-300">About Me</a>
+        <a href="#projects" class="hover:text-purple-300">Projects</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION (Always Dark) -->
+  <section
+    class="flex items-center justify-center h-[80vh]
+            bg-gradient-to-r from-purple-900 via-indigo-800 to-blue-700"
+  >
+    <div class="text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Welcome to My Portfolio
+      </h1>
+      <p class="text-lg md:text-xl mb-8">
+        Exploring projects, sharing knowledge, and having fun coding!
+      </p>
+      <a
+        href="#about"
+        class="bg-purple-700 hover:bg-purple-600 px-6 py-3 rounded-full transition"
+      >
+        Learn More
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section id="about" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-4 text-purple-300">About Me</h2>
+    <p class="leading-relaxed mb-6">
+        Heyo~! I'm Nick, just a tech enthusiast who loves exploring self-hosting, networking, cars, and gaming. 
+        This website is my personal space to showcase the projects I'm working on, share my experiences setting them up or maintaining them, 
+        and highlight how useful (or just plain cool!) they are.
+        Thanks for stopping by, I’m glad you’re here!
+    </p>
+    <p class="leading-relaxed">
+        In my free time, you'll usually find me experimenting with new software, wrenching on my car, or diving into a fresh coding project. 
+        Take a look at what I've been up to below!
+    </p>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8 text-purple-300">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- PROJECT 1 -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow">
+        <h3 class="text-xl font-bold mb-2 text-purple-300">This Website!</h3>
+        <p class="text-gray-200">
+          This website is a personal project, Hosted on AWS and routed though cloudflare!
+          Coded in htlm and tailwind!
+        </p>
+        <a
+          href="website.html"
+          class="inline-block mt-4 text-purple-400 hover:underline"
+        >
+          View project
+        </a>
+      </div>
+      <!-- PROJECT 2 -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow">
+        <h3 class="text-xl font-bold mb-2 text-purple-300">Project Two</h3>
+        <p class="text-gray-200">
+          An experimental machine learning model for image classification.
+          Trained on custom data and deployed as a simple API.
+        </p>
+        <a
+          href="#"
+          class="inline-block mt-4 text-purple-400 hover:underline"
+        >
+          View project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 py-6 mt-16">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p class="text-gray-300">
+        &copy; 2025 ItzWiz LLC. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
